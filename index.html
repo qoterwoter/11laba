@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" v-bind:title='message + id'>
+        <h1>{{ id }}</h1>
+        <div>
+            <h1 v-if='status'>Свойство истино</h1>
+            <h1 v-else>Свойсто неверно</h1>
+        </div>
+        <div>
+            <h2 v-if='count == 1'>Количество равно единице</h2>
+            <h2 v-else-if='count ==2'>Количество равно двойке</h2>
+            <h2 v-else>Количество равно {{count}}</h2>
+        </div>
+        <p>{{message + id}}</p>
+        <p>{{message + message + id}}</p>
+
+        <template v-if='tempStatus'>
+            <h2>Заголовок первого абзаца</h2>
+            <p>Текст первого абзаца</p>
+            <p>Текст первого абзаца</p>
+            <p>Текст первого абзаца</p>
+        </template>
+        <template v-else>
+            <h2>Заголовок второго абзаца</h2>
+            <p>Текст второго абзаца</p>
+            <p>Текст второго абзаца</p>
+            <p>Текст второго абзаца</p>
+            </template>
+        <div v-show='vshow'>
+            <h2>Скрытый заголовок</h2>
+            <p>Скрытый параграф</p>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
